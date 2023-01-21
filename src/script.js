@@ -49,6 +49,32 @@ fontLoader.load('/fonts/helvetiker_regular.typeface.json',
     }
 )
 
+fontLoader.load('/fonts/helvetiker_regular.typeface.json',
+
+    (font1) =>
+    {
+        const textGeometry1 = new TextGeometry(
+            '2 .0 C O M I N G   S O O N',
+            {
+                font : font1,
+                size : 0.12,
+                height : 0,
+                curveSegments : 4,
+                bevelEnabled : true ,
+                bevelThickness : 0.009,
+                bevelSize : 0.002 , 
+                bevelOffset : 0,
+                bevelSegments : 6
+            }
+        )
+        textGeometry1.center()
+        const textMaterial1 = new THREE.MeshMatcapMaterial({matcap : matcaptexture})
+        const text1 = new THREE.Mesh(textGeometry1 , textMaterial1)
+        text1.position.set(3 , 1.9 , 0)
+        scene.add(text1)
+    }
+)
+
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
